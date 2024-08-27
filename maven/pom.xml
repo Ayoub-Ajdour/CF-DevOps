@@ -4,17 +4,20 @@
   <artifactId>maven</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
   <build>
     <plugins>
       <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-war-plugin</artifactId>
-  <version>3.3.2</version>
-  <configuration>
-    <failOnMissingWebXml>false</failOnMissingWebXml>
-  </configuration>
-</plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>maven.Hello</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   
@@ -23,22 +26,5 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
-     <dependencies>
-    <!-- Servlet API for web applications -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>${servlet.api.version}</version>
-      <scope>provided</scope>
-    </dependency>
     
-    <!-- Add other dependencies needed for your web application -->
-    <!-- Example: JUnit for testing -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 </project>
